@@ -1,0 +1,3 @@
+show collections
+use lyrics_db
+show dbs;
