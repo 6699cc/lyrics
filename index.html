@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B'z道場</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e1e, #3b3b3b);
+  color: #fff;
+  text-align: center;
+  height: 100vh; /* 画面全体を使用 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 12px;
+  background: rgba(13, 15, 47, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px #2463af33;
+}
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .lyric-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .lyric {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: #fff;
+      font-weight: 400;
+      white-space: normal;
+      word-wrap: break-word;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .title-container {
+      margin-top: 10px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #f8f8f8;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .button-container {
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+      background: linear-gradient(135deg, hwb(217 48% 4%), hsl(212, 97%, 61%));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(66, 164, 244, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, rgb(42, 91, 239), hsl(208, 55%, 51%));
+      transform: translateY(-2px);
+    }
+
+    .arrow-btn {
+      padding: 10px;
+      font-size: 1.5rem;
+      background: hsla(213, 76%, 27%, 0.3);
+      color: #fff;
+      transition: all 0.3s ease;
+      border-radius: 10%;
+      border: none;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow-btn:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .lyric {
+        font-size: 1.5rem;
+      }
+      .arrow-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>B'z道場</h2>
+    
+    <div class="lyric-container">
+      <button class="arrow-btn" onclick="showPreviousLyric()">←</button>
+      <p id="lyric" class="lyric">🎶 ここに歌詞が表示されます 🎶</p>
+      <button class="arrow-btn" onclick="showNextLyric()">→</button>
+    </div>
+
+    <div class="title-container">
+      <p id="title" class="title">曲名: <strong>？？？</strong></p>
+    </div>
+
+    <div class="button-container">
+      <button onclick="showAnswer()">答えを表示</button>
+      <button onclick="fetchLyric()">別の歌詞を表示</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
