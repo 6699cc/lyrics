@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from pymongo import MongoClient
 import os
@@ -12,8 +12,12 @@ db = client["lyrics_db"]
 collection = db["songs"]
 
 @app.route("/")
-def home():
-    return jsonify({"message": "Flask with MongoDB is running!"})
+def index():
+    return render_template('index.html')
+
+@app.route("/beginning")
+def beginning():
+    return render_template('beginning.html')
 
 @app.route("/add_song", methods=["POST"])
 def add_song():

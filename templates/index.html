@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B'z道場</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+  <div class="container">
+    <h2>B'z道場</h2>
+    <h3>1フレーズ</h3><br>
+    
+    <div class="lyric-container">
+      <button id="previous" class="arrow-btn" onclick="showPreviousLyric()">←</button>
+      <p id="lyric" class="lyric">🎶 ここに歌詞が表示されます 🎶</p>
+      <button id="next" class="arrow-btn" onclick="showNextLyric()">→</button>
+    </div>
+
+    <div class="title-container">
+      <p id="title" class="title">曲名: <strong>？？？</strong></p>
+    </div>
+
+    <div class="button-container">
+      <button id="answer" onclick="showAnswer()">答えを表示</button>
+      <button id="another"  class="another" onclick="fetchLyric()">別の歌詞を表示</button>
+    </div>
+  </div>
+  <input type="hidden" name="name" id="page" value="index">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
